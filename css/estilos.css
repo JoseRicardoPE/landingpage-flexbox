@@ -1,0 +1,492 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  /* se usa como guía de maquetación.   */
+  /* outline: 3px solid red; */
+}
+
+:root {
+  --padding-container: 60px 0;
+  --color-primary: #f77062;
+  --color-secondary: #1b998b;
+  --color-bg: #fafafa;
+  --align-title: center;
+  --box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: var(--padding-container);
+  overflow: hidden;
+  /* outline: 3px solid red; */
+}
+
+/* hero section */
+.hero {
+  height: 100vh;
+  --padding-container: 0;
+  background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+}
+
+.hero__main {
+  height: 100%; /* el 100% de su contenedor padre (.hero) o sea el 100% del 100vh. */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap-reverse; /* para que la imagen se ubique en la parte de arriba y para dispósitivos móviles.*/
+}
+
+.hero__img {
+  width: 45%;
+  text-align: center; /* para centrar la imágen. */
+  margin: 0;
+}
+
+.hero__picture {
+  max-width: 80%;
+}
+
+.hero__text {
+  width: 45%;
+  color: #fff;
+}
+
+.hero__title {
+  font-size: 3rem;
+}
+
+.hero__copy {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* About Section */
+
+.title {
+  font-size: 2.5rem;
+  margin: 0; /* Se deja margin:0; porque al ser un elemento h2, tiene márgenes por defecto. */
+  margin-bottom: 30px;
+  color: var(--color-primary);
+  text-align: var(--align-title);
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about__img {
+  width: 45%;
+  text-align: center;
+  margin: 0px; /* Al ser un elemento figure, va a tener márgenes por defecto.  */
+}
+
+.about__picture {
+  max-width: 80%;
+}
+
+.about__texts {
+  width: 50%;
+  --align-title: left;
+}
+
+.about__paragraph {
+  line-height: 1.5;
+}
+
+.about__cta {
+  /* los enlaces por ser elementos en línea, siempre dejarlos como inline-block;*/
+  display: inline-block;
+  margin-top: 30px;
+  background: var(--color-primary);
+  padding: 20px 40px;
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Section Portfolio (Cards) */
+
+.portfolio {
+  background: var(--color-bg);
+}
+
+.portfolio__cards {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.portfolio__card {
+  width: 30%;
+  background: #fff;
+  height: auto;
+  box-shadow: var(--box-shadow);
+  border-radius: 10px;
+}
+
+.portfolio__picture {
+  width: 100%;
+  display: block; /* Esto soluciona el espaciado que dejan las imágenes. */
+  border-radius: 10px 10px 0 0;
+  height: 150px;
+  object-fit: cover;
+}
+
+.portfolio__texts {
+  padding: 20px 10px 30px;
+}
+
+.portfolio__title {
+  font-size: 1.25rem;
+  text-align: center;
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+.portfolio__paragraph {
+  font-weight: 300;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.portfolio__cta {
+  display: block;
+  background-image: linear-gradient(
+    to right,
+    #1b998b 0%,
+    #50afa6 50%,
+    #1b998b 100%
+  );
+  background-size: 200% auto;
+  padding: 10px 0;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  border-radius: 30px;
+  margin-top: 15px;
+  transition: 0.4s ease all;
+}
+
+.portfolio__cta:hover {
+  background-position: right center;
+  transform: scale(1.02);
+  text-decoration: underline;
+}
+
+/* Copy Section */
+.copy {
+  background: var(--color-primary);
+}
+
+.title--margin {
+  color: #fff;
+  margin: 0;
+}
+
+/* Gallery Section */
+.gallery__container {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.gallery__picture {
+  width: 30%;
+  object-fit: cover;
+  height: 200px;
+  margin-bottom: 20px;
+  display: block;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  opacity: 0.7;
+  transition: 0.4s ease all;
+}
+
+.gallery__picture:hover {
+  opacity: 1;
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+/* Languages Section */
+.languages {
+  background: var(--color-bg);
+}
+
+.languages__title {
+  text-align: center;
+  margin: 0 0 50px;
+}
+
+.languages__container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.languages__picture {
+  width: 20%;
+  height: 100px;
+}
+
+/* Footer Section */
+.footer {
+  background: var(--color-primary);
+  text-align: center;
+  color: #fff;
+}
+
+.footer__container {
+  --color-primary: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer__texts {
+  width: 50%;
+}
+
+.footer__title{
+  margin-bottom: 30px;
+}
+
+.footer__icon {
+  display: inline-block;
+  font-size: 2rem;
+  margin: 0 30px;
+  /* text-decoration: none; */
+  color: #fff;
+  margin-bottom: 30px;
+  transition: 0.3s ease all;
+}
+
+.footer__icon:hover {
+  cursor: pointer;
+  color: #d6d5d5;
+}
+
+.footer__link {
+  display: inline-block;
+  margin: 0 20px;
+  margin-bottom: 15px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease all;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+  color: #d6d5d5;
+}
+
+/* la etiqueta figure tiene un margen por defecto, se recomienda quitarlo */
+.footer__img {
+  margin: 0;
+  width: 25%;
+}
+
+.footer__picture {
+  width: 100%;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1500px) {
+  .container {
+    max-width: 1200px;
+    width: 70%;
+    margin: 0 auto;
+    padding: var(--padding-container);
+    overflow: hidden;
+  }
+
+  .hero {
+    height: 500px;
+    --padding-container: 40px;
+  }
+
+  .hero__main {
+    height: 100%;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .container {
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+    padding: var(--padding-container);
+    overflow: hidden;
+  }
+  .hero {
+    /* min-height: 100vh; */
+    height: 500px;
+    --padding-container: 40px 0;
+  }
+  .hero__main {
+    height: 100%;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: var(--padding-container);
+    overflow: hidden;
+  }
+
+  .hero {
+    max-height: 100vh;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hero {
+    max-height: 100vh;
+    height: auto;
+    --padding-container: 50px 0;
+  }
+
+  /* .hero__main {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  } */
+
+  .hero__img {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+
+  .hero__picture {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero__text {
+    width: 80%;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: 2.1875rem;
+    margin-bottom: 20px;
+  }
+
+  .hero__copy {
+    font-size: 1.375rem;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .about__img {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+
+  .about__picture {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .about__texts {
+    width: 80%;
+    text-align: center;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 2.1875rem;
+    margin-bottom: 20px;
+  }
+
+  .about__paragraph {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+
+  .portfolio__card {
+    width: 80%;
+    margin-bottom: 40px;
+  }
+
+  .gallery__picture {
+    width: 80%;
+  }
+
+  .languages__container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .languages__picture {
+    width: 35%;
+    margin-bottom: 40px;
+  }
+
+  .footer__container {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+
+  .footer__title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .footer__img {
+    width: 70%;
+    padding: 20px 0;
+    margin-bottom: 10px;
+  }
+
+  .footer__picture {
+    width: 100%;
+  }
+
+  .footer__icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;  
+  }
+
+  .footer__icon{
+    font-size: 2rem;
+    width: 100px;
+    height: 60px;
+  }
+
+  .footer__icon.fab{
+    line-height: 40px;
+  }
+}
